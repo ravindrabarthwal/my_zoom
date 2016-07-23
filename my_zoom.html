@@ -1,0 +1,33 @@
+
+<style type="text/css"> 
+
+#range {
+    width:70%; 
+    overflow:hidden;  
+    position:relative;
+    border: 1px solid black; 
+       } 
+
+#container-zoom { position:absolute; }
+
+</style> 
+
+
+<div id="range">
+    <div id="container-zoom">
+<img class="mapzoom target" data-zoom="0" src="./imagezoom.jpg" id="map-image"> 
+    </div>
+</div>
+
+ 
+
+<br>
+<a  href="#" onclick="more_zoom()">more zoom +</a> 
+<br><br>
+<a  href="#" onclick="minus_zoom()">reduce zoom -</a> 
+
+
+
+<script   src="https://code.jquery.com/jquery-1.7.0.min.js"></script>
+<script   src="https://code.jquery.com/ui/1.7.0/jquery-ui.min.js"></script>
+<script   src="./my_zoom.js"></script>
