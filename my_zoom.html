@@ -22,12 +22,30 @@
  
 
 <br>
-<a  href="#" onclick="more_zoom()">more zoom +</a> 
+<a  href="javascript:void(0)" id="increase">more zoom +</a> 
 <br><br>
-<a  href="#" onclick="minus_zoom()">reduce zoom -</a> 
+<a  href="javascript:void(0)" id="decrease">reduce zoom -</a> 
 
 
 
-<script   src="https://code.jquery.com/jquery-1.7.0.min.js"></script>
-<script   src="https://code.jquery.com/ui/1.7.0/jquery-ui.min.js"></script>
-<script   src="./my_zoom.js"></script>
+<script   src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script   src="https://code.jquery.com/ui/1.7.2/jquery-ui.min.js"></script>
+<script src="./rjszoom.js"></script>
+<script>
+	//The lib now only have one global var that is rjsZoom :)
+	var myZoom = rjsZoom('#range', '#container-zoom', '#map-image');
+	myZoom.initZoom();
+
+	$('#increase').click(function(){
+		myZoom.increaseZoom();
+	});
+	$('#decrease').click(function(){
+		myZoom.decreaseZoom();
+	});
+	window.addEventListener("resize", function(){
+			
+	myZoom.initZoom();
+	});
+
+</script>
+<!-- <script   src="./my_zoom.js"></script> -->
